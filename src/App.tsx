@@ -57,7 +57,11 @@ export default function App() {
           >
             <SheetTrigger asChild>
               <Card
-                className="cursor-pointer hover:shadow-lg transition-shadow"
+                className={`cursor-pointer transition-all duration-200 ${
+                  selectedId === product.id
+                    ? 'ring-2 ring-primary shadow-lg scale-[1.02]'
+                    : 'hover:shadow-lg'
+                }`}
                 onClick={() => handleProductSelect(product.id)}
               >
                 <CardHeader className="p-4">
